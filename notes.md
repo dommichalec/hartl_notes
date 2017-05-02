@@ -84,6 +84,33 @@ This standard directory and file structure is one of the many advantages of Rail
 
 `gem 'coffee-rails', '~> 4.0.0'` installs the gem coffee-rails as long as it’s newer than version 4.0.0 and not newer than 4.1. **In other words, the >= notation always installs the latest gem, whereas the ~> 4.0.0 notation only installs updated gems where the last digit differs (e.g., from 4.0.0 to 4.0.1), but the digits before that releases (e.g., from 4.0 to 4.1).**
 
+### 1.3 Model-View-Controller (MVC)
+
+Rails follows the **model-view-controller (MVC)** architectural pattern, which enforces a **separation between the data in the application (such as user information)** and the **code used to display it**, which is a common way of structuring a graphical user interface (GUI).
+
+### 1.4 Version control with Git
+
+**First time system setup**
+
+After installing Git, you should perform a couple of one-time setup steps. These are system setups, meaning you only have to do them once per computer:
+
+```
+$ git config --global user.name "Your Name"
+$ git config --global user.email your.email@example.com
+```
+
+### 1.5 Deploying
+no notes
+### 1.5.1 Heroku setup
+Heroku uses the PostgreSQL database (pronounced “post-gres-cue-ell”, and often called “Postgres” for short), which means that we need to add the pg gem in the production environment to allow Rails to talk to Postgres:
+
+```
+group :production do
+  gem 'pg', '0.18.4'
+end
+```
+
+
 
 # Chapter 2
 ## A toy app
